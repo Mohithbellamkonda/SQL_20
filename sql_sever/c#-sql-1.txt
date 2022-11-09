@@ -1,0 +1,12 @@
+create table Passport_info(
+     passport_number bigint,
+	 name varchar(10),
+	 exipiry_date date,
+	 validity_years int ,
+	 applied_by varchar(10)
+);
+Create or Alter procedure  pass  @pass_id bigint ,@name varchar(10),@exipiry_date date,@validity_years int,@applied_by varchar(10)
+AS
+insert into Passport_info values(@pass_id ,@name,@exipiry_date,@validity_years,@applied_by);
+select * from Passport_info;
+EXEC pass
