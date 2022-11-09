@@ -1,0 +1,13 @@
+Create table Employee(
+employee_name varchar(20),
+employee_org varchar(9) default 'ivy_com',
+employee_city varchar(10)
+);
+Insert into Employee(employee_name,employee_city) values('mohith','addanki');
+select * from employee
+Insert into Employee(employee_name,employee_city) values('rounak','kolkata');
+Insert into Employee(employee_name,employee_city) values('abhi','mumbai');
+Insert into Employee(employee_name,employee_city) values('mani','addanki');
+Insert into Employee(employee_name,employee_city) values('pawan kalyan','hyd');
+Insert into Employee(employee_name,employee_city) values('prabhas','hyd');
+select distinct employee_city from Employee;

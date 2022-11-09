@@ -1,0 +1,29 @@
+create table college1(
+	name1 varchar(20), 
+	age1 int, 
+	course1 varchar(20)
+);
+
+insert into college1 values('Mohith',22,'Maths');
+insert into college1 values('Anand',22,'Physics');
+insert into college1 values('Sonali',12,'Maths');
+insert into college1 values('Mohith',25,'Maths');
+insert into college1 values('Anand',23,'Chemistry');
+insert into college1 values('Rounak',23,'History');
+
+create table college2(
+	name2 varchar(20), 
+	age2 int, 
+	course2 varchar(20)
+);
+
+insert into college2 values('Vicky',25,'Maths');
+insert into college2 values('Yuvraj',22,'Geography');
+insert into college2 values('Bhuvi',23,'Commerce');
+insert into college2 values('sonam',21,'History');
+insert into college2 values('Nikar',24,'Maths');
+insert into college2 values('raju',21,'Physics');
+
+select college1.name1 as Name,college1.age1 as Age,college1.course1 as Subject from college1 where college1.course1='Maths' and college1.age1>21
+Union
+select college2.name2 as Name,college2.age2 as Age,college2.course2 as subject from college2 where college2.course2='Maths' and college2.age2>21

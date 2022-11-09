@@ -1,0 +1,24 @@
+Create table students(
+	stud_id int Primary Key,
+	stud_name nvarchar(20),
+	course_name nvarchar(20),
+	month varchar(20),
+);
+
+insert into students values(101,'mohith','s','aug');
+insert into students values(102,'Sonali','Geography','jan');
+
+insert into students values(103,'Ankit','Physics','july');
+insert into students values(104,'Manish','History','july');
+
+insert into students values(106,'Sanjana','Hindi','sep');
+insert into students values(107,'Akhil','Maths','mar');
+
+insert into students values(108,'Satyam','English','sep');
+insert into students values(109,'Akash','Physics','aug');
+
+insert into students values(110,'Rupali','Chemistry','jan');
+insert into students values(111,'Nanda','Maths','march');
+insert into students values(112,'mohith','Physics','july');
+
+Select * from students where course_name='Physics' and month='july';

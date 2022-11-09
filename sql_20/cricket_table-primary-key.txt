@@ -1,0 +1,19 @@
+create table Cricket(
+started_playing int,
+name varchar(20),
+country varchar(20),
+primary key(name,country)
+);
+insert into Cricket values(1992,'sachin','india');
+insert into Cricket values(2010,'vk','india');
+insert into cricket values(2007,'rohit','india');
+insert into cricket values(2007,'dhoni','india');
+insert into cricket values(2005,'abd','SA')
+insert into cricket values(2007,'Smith','Aus');
+insert into cricket values(2019,'surya','india');
+ 
+ select * from Cricket;
+ insert into cricket values(2008,'rohit','in');
+ select * from Cricket;
+ insert into cricket values(2008,'rohit','india');
+ select * from Cricket;
