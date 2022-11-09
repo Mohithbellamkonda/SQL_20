@@ -1,0 +1,22 @@
+Insert into regional_sales values('Delhi',50000,20000,10000);
+Insert into regional_sales values('Goa',10000,2000,7000);
+
+
+
+create or alter  function get_values(@name varchar(20)) returns table
+AS
+return
+select * from regional_sales where regional_sales.region_name=@name
+
+create or alter function get_avg(@name varchar(20)) 
+returns @ans table(ans bigint)
+AS
+Begin
+DECLARE @res TABLE (city varchar(20),sale_amt1 BIGINT,sale_amt2 bigint,sale_amt3 bigint)
+insert into @res SELECT * FROM get_values(@name)
+insert into @ans SELECT (sale_amt1+sale_amt2+sale_amt3)/3  from  @res
+Return
+End
+
+Select * from get_avg('mumbai')
+
