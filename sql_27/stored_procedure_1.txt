@@ -1,0 +1,12 @@
+Create Table Employee_day4(emp_id int primary key,emp_name varchar(50) not null,work_language varchar(50) not null ,
+location varchar(50) not null);
+insert into Employee_day4 values(1,'Mohith','Python','Chennai');
+insert into Employee_day4 values(2,'Dheeraj','C#','Mumbai');
+insert into Employee_day4 values(3,'Rakesh','C#','Bangalore');
+insert into Employee_day4 values(4,'Sanju','Python','Bangalore');
+insert into Employee_day4 values(5,'Bhagi','SQL','Vizag');
+
+Alter PROCEDURE st_pro
+AS
+select * from Employee_day4 where work_language ='C#' and location ='bangalore'
+EXEC st_pro

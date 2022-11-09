@@ -1,0 +1,25 @@
+CREATE TABLE time_Zone(
+country_code INT PRIMARY KEY,
+country_name varchar(20),
+)
+
+insert into time_zone values(1,'US')
+insert into time_zone values(2,'UK')
+insert into time_zone values(3,'Dubai')
+insert into time_zone values(4,'Singapore')
+
+CREATE  or alter FUNCTION timeZone (@country_name varchar(20))
+RETURNS varchar(20) AS
+BEGIN
+DECLARE @Ring AS varchar(20)
+   IF @country_name='Dubai'
+    set @Ring = '5 am'
+   ELSE IF @country_name='UK'
+     set @Ring = '6 am'
+   ELSE 
+   set @Ring = '8 am'
+
+   RETURN @Ring
+END
+
+select dbo.timeZone('US') as ring_time

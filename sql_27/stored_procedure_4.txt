@@ -1,0 +1,12 @@
+
+CREATE function simpleInterest(@Principle_amount BIGINT,@Time INT)
+RETURNS BIGINT AS
+BEGIN
+   DECLARE @Rate AS INT
+   SET  @Rate=5
+  DECLARE @Result AS BIGINT
+  SELECT  @Result = (@Principle_amount*@Rate*@Time)/100
+  RETURN @Result
+END
+
+SELECT dbo.simpleInterest(50000,5)

@@ -1,0 +1,21 @@
+create table student(student_id int primary key, student_name varchar(20) not null,
+maths int,physics int,chemistry int , english int, computer_science int);
+
+insert into student values(1,'Mohith',70,80,60,70,62);
+insert into student values(2,'vamsi',56,78,90,45,55);
+insert into student values(3,'rounak',79,90,66,54,89);
+insert into student values(4,'ajay',54,88,94,45,37);
+insert into student values(5,'vijay',78,49,76,49,85);
+insert into student values(6,'bhupesh',68,90,83,66,39);
+insert into student values(7,'raja',67,89,46,78,66);
+insert into student values(8,'hemanth',75,38,88,56,86);
+insert into student values(9,'vamsi',59,90,63,85,73);
+insert into student values(10,'ajith',59,49,87,48,74);
+
+
+CREATE OR ALTER PROCEDURE p_3 AS
+
+DECLARE @result table (Name varchar(20),Total_marks int)
+
+insert into @result  select student_name,(maths+physics+chemistry+english+computer_science)  from student 
+SELECT * from @result
