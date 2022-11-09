@@ -1,0 +1,46 @@
+create table customer_details(
+cust_name varchar(50),
+cust_Aadhar_number bigint not null primary key,
+);
+
+insert into customer_details values('Abhay',123456);
+insert into customer_details values('chandini',789012);
+insert into customer_details values('Rounak',234567);
+insert into customer_details values('Ramesh',890123);
+insert into customer_details values('Vikram',456789);
+insert into customer_details values('thala',012345);
+insert into customer_details values('vk',678901);
+insert into customer_details values('Raja',134567);
+insert into customer_details values('Banty',994899);
+insert into customer_details values('Mohith',162626);
+
+create table account(
+Account_no int not null primary key,
+Account_balance bigint,
+Account_opened_date date,
+Last_transaction_date date,
+Aadhar_number bigint,
+FOREIGN KEY (Aadhar_number) REFERENCES customer_details(cust_Aadhar_number )
+)
+
+insert into account values(1,100000,'2022-01-12','2021-11-12',123456)
+insert into account values(2,20000,'2021-02-12','2021-11-12',789012)
+insert into account values(3,300000,'2010-04-12','2021-11-12',234567)
+insert into account values(4,50000,'2011-12-12','2021-11-12',890123)
+insert into account values(5,70000,'2012-05-12','2021-11-12',456789)
+insert into account values(6,880300,'2013-07-12','2021-11-12',012345)
+insert into account values(7,630700,'2015-09-12','2021-11-12',678901)
+insert into account values(8,900900,'2012-11-12','2021-11-12',134567)
+insert into account values(9,60000,'2016-10-12','2021-11-12',994899)
+insert into account values(10,230000,'2018-11-12','2021-11-12',162626)
+
+create Function Show(@Balance bigint) returns table
+AS
+Return
+select * from account
+inner join customer_details 
+on account.Aadhar_number=customer_details.cust_Aadhar_number
+where account.Account_balance>@Balance
+
+select * from Show(20000)
+
