@@ -1,0 +1,22 @@
+Create Table student(
+    Student_id int Primary Key,
+    Student_name Varchar(20) not null,
+    Physics int not null,
+	chemistry  int not null,
+	maths int not null
+);
+insert into student values(1,'mohith',80,70,60);
+insert into student values(2,'abhay',90,80,100);
+insert into student values(3,'kalyan',70,70,80);
+insert into student values(4,'raja',70,60,20);
+insert into student values(5,'pawan',60,100,70);
+insert into student values(6,'ankith',90,80,80);
+insert into student values(7,'rounak',100,90,80);
+select *from student;
+
+
+
+SELECT * FROM student  WHERE maths IN (SELECT MAX(maths) FROM student);
+SELECT * FROM student  WHERE Physics IN (SELECT MAX(Physics) from student);
+SELECT * FROM student  WHERE chemistry in (SELECT MAX(Chemistry) from student);
+
