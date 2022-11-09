@@ -1,0 +1,27 @@
+Create table student_data(
+     name varchar(20),
+	 physics_marks int,
+	 chemistry_marks int,
+	 maths_marks int
+);
+insert into student_data values('mohith',80,90,80);
+insert into student_data values('Rajesh',70,76,82);
+insert into student_data values('somesh',82,90,66);
+insert into student_data values('rounak',44,79,94);
+insert into student_data values('jeswanth',99,75,23);
+insert into student_data values('bhupesh',48,98,49);
+
+create or ALter  procedure std_1 @total_marks INT
+AS
+Begin 
+Select * from student_data where @total_marks > physics_marks+chemistry_marks+maths_marks
+End 
+
+create or ALter  procedure std_2 @input varchar(20) 
+AS
+Begin
+DECLARE @total_marks AS INT
+Select @total_marks=physics_marks+chemistry_marks+maths_marks  from student_data where student_data.name=@input;
+Exec std_1 @total_marks
+End
+Exec std_2 'somesh'
