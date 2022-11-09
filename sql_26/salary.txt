@@ -1,0 +1,16 @@
+create table employee(
+	emp_id int primary key, 
+	emp_name varchar(20) not null UNIQUE, 
+	salary bigint
+);
+
+insert into employee values (1,'mohith',53500);
+insert into employee values (2,'kishore',23000);
+insert into employee values (3,'Rajesh',45000);
+insert into employee values (4,'amrutha',62000);
+insert into employee values (5,'Rakesh',46000);
+insert into employee values (6,'virat',100000);
+insert into employee values (7,'amaresh',78000);
+insert into employee values (18,'Ameem',34000);
+
+select * from employee where salary<80000 and salary>50000

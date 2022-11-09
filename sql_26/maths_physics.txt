@@ -1,0 +1,9 @@
+create table student(id int primary key,std_name varchar(20),maths varchar(20),physics varchar(20));
+
+insert into student values(1,'Mohith','Yes','Yes');
+insert into student values(2,'Bheeshma','No','Yes');
+insert into student values(3,'Rohith','Yes','Yes');
+insert into student values(4,'indra','Yes','No');
+insert into student values(5,'rajesh','No','No');
+
+select * from student where maths!='Yes' or physics!='Yes';

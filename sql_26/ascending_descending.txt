@@ -1,0 +1,17 @@
+create table employee(
+	emp_id int,
+	emp_name varchar(20),
+	emp_dept varchar(20)
+ );
+
+ insert into employee values(1,'Mohith','maths');
+ insert into employee values(2,'Rounak','physics');
+ insert into employee values(3,'sundar','chemistry');
+ insert into employee values(4,'Raju','Python');
+ insert into employee values(5,'Mukesh','Full_Stack');
+ insert into employee values(6,'Ankith','JavaScript');
+ insert into employee values(7,'sirisha','sql');
+ insert into employee values(8,'Amrutha','Angular');
+ select * from employee
+
+ select * from employee order by emp_name ASC, emp_dept DESC 

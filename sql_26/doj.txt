@@ -1,0 +1,9 @@
+create table student_details(id int primary key, std_name varchar(20), DOJ date);
+
+insert into student_details values(1,'prem','2018/04/2')
+insert into student_details values(2,'vamsi','2022/10/08')
+insert into student_details values(3,'venky','2020/02/26')
+insert into student_details values(4,'yanosh','2019/07/19')
+insert into student_details values(5,'das','2019/09/2')
+
+select * from student_details where DOJ > '02/25/2020';

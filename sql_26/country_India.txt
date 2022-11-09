@@ -1,0 +1,26 @@
+create table country(
+    country_id int primary key,
+    country_name varchar(30)
+)
+
+insert into country values(10,'India')
+insert into country values(20,'Australia')
+insert into country values(30,'America')
+
+
+create table city_table(
+    person_name varchar(25),
+    city_name varchar(30),
+    country_id int,
+    foreign key (country_id) references country(country_id)
+)
+insert into city_table values('Mohith','Hyderabad',10)
+insert into city_table values('Lokesh','Bangalore',10)
+insert into city_table values('Yasin','Chennai',10)
+insert into city_table values('Rithvik','Sydney',20)
+insert into city_table values('Bharath','Mumbai',10)
+insert into city_table values('Vijay','Bangalore',10)
+insert into city_table values('Ramarao','Texas',30)
+select country.country_id, city_table.person_name, city_table.city_name,country.country_name from city_table 	
+INNER JOIN country	
+ON city_table.country_id = country.country_id where country_name='India';

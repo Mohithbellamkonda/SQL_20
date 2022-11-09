@@ -1,0 +1,9 @@
+create table Fullname(
+   First_Name varchar(50),
+   Last_Name varchar(50)
+);
+
+insert into Fullname values('Mohith','Bellamkonda');
+insert into Fullname values('Rounak','Bhattacharya');
+insert into Fullname values('Rajesh','Kanna');
+insert into Fullname values('Gopal','pagadala');

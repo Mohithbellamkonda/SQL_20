@@ -1,0 +1,20 @@
+
+create table purchase(
+	order_id int,
+	order_amount int,
+	order_date date
+);
+
+insert into purchase values(1,10000,'01-02-2022')
+insert into purchase values(1,200000,'02-03-2022')
+insert into purchase values(3,30000,'03-04-2022')
+insert into purchase values(4,400000,'05-06-2022')
+insert into purchase values(5,50000,'07-08-2022')
+insert into purchase values(6,600000,'01-08-2018')
+insert into purchase values(7,700000,'26-10-2021')
+insert into purchase values(8,800000,'10-01-2022')
+
+select * from purchase
+
+select max(order_amount) from purchase
+where order_amount  in (select order_amount from purchase where order_date>='12-10-2021' group by order_amount)
